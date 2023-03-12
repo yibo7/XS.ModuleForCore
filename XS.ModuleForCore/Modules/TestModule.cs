@@ -12,7 +12,7 @@ using XS.ModuleForCore.MCore;
 
 namespace XS.ModuleForCore.Modules
 {
-    public partial class TestModule : DockContent, IModules
+    public partial class TestModule : XsEbDockContent, IModules
     {
         public string Title => "内部模块";//要实现模块名称
         public Image Ico => Resource.word1; //要实现模块图标
