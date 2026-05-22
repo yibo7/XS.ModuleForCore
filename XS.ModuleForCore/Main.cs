@@ -1,4 +1,5 @@
 using WeifenLuo.WinFormsUI.Docking;
+using XS.Core2;
 
 namespace XS.ModuleForCore
 {
@@ -15,8 +16,8 @@ namespace XS.ModuleForCore
             this.ShowContent("功能模块", new ModuleList(this), DockState.DockLeft);
             this.ShowContent("首页", new PageIndex());
 
-            //Core2.LogHelper.Write("系统启动了");
-             
+            LogHelper.Write("系统启动了");
+
 
 
         }

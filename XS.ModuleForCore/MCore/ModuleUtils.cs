@@ -27,13 +27,16 @@ namespace XS.ModuleForCore.MCore
             List<Assembly> assModule = new List<Assembly>();
             try
             {
-                FileInfo[] moduleDlls = FObject.GetFileListByType(string.Concat(Application.StartupPath, "\\modules\\"), "dll"); //获取所有Dll
-                foreach (FileInfo fileInfo in moduleDlls)
+                string OutModulePath = string.Concat(Application.StartupPath, "\\modules\\");
+                if(FObject.IsExist(OutModulePath,FsoMethod.Folder))
                 {
-                    Assembly asm = Assembly.LoadFrom(fileInfo.FullName);
-                    assModule.Add(asm);
-                }
-
+                    FileInfo[] moduleDlls = FObject.GetFileListByType(OutModulePath, "dll"); //获取所有Dll
+                    foreach (FileInfo fileInfo in moduleDlls)
+                    {
+                        Assembly asm = Assembly.LoadFrom(fileInfo.FullName);
+                        assModule.Add(asm);
+                    }
+                } 
             }
             catch (Exception ex)
             {
